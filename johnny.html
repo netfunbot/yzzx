@@ -130,6 +130,20 @@ th{background:#f5f5f5;text-align:center}
 </div>
 </div>
 
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">A1备注：</label>
+<input class="form-input" id="A1备注" placeholder="请输入">
+</div>
+<div style="flex:1">
+<label class="form-label">A2备注：</label>
+<input class="form-input" id="A2备注" placeholder="请输入">
+</div>
+</div>
+
+<label class="form-label">E6：</label>
+<input class="form-input" id="E6内容" placeholder="请输入">
+
 <label class="form-label">签字日期：</label>
 <input class="form-input" id="签字日期" type="date">
 
@@ -150,6 +164,9 @@ $('签字日期').value=today;
 function showPreview(){
 var 签字 = $('签字日期').value;
 var 签字_str = fd(签字);
+var A1 = v('A1备注') || '白人区豪华别墅豪华套间（独立洗手间）';
+var A2 = v('A2备注') || '成人 50 美金/日，儿童 25 美金/日（含一日三餐及住宿）';
+var E6 = v('E6内容') || '';
 
 var html='<h2>皇家月子中心会所服务合约</h2>';
 html+='<div class="note">本合约由客户和月子中心双方就相关服务细节进行确认，为了更好保护客户权益，客户应仔细阅读。</div>';
@@ -185,8 +202,8 @@ html+='<h3>二、月子中心服务明细</h3>';
 html+='<p>本表费用除特别注明外，均以美金计价</p>';
 html+='<table><tr><th>编号</th><th>项目</th><th>备注</th></tr>';
 html+='<tr><td colspan="3"><strong>A. 住宿</strong></td></tr>';
-html+='<tr><td>A1</td><td>尊贵住宿标准</td><td>白人区豪华别墅豪华套间（独立洗手间）</td></tr>';
-html+='<tr><td>A2</td><td>家人陪同</td><td>成人 50 美金/日，儿童 25 美金/日（含一日三餐及住宿）</td></tr>';
+html+='<tr><td>A1</td><td>尊贵住宿标准</td><td>'+A1+'</td></tr>';
+html+='<tr><td>A2</td><td>家人陪同</td><td>'+A2+'</td></tr>';
 html+='<tr><td>A3</td><td>套内豪华配置</td><td>套内自带高端厨房、洗衣机、烘干机；一次性提供浴巾，毛巾、拖鞋，洗发液、护发素、沐浴露、牙膏、牙刷等日用品；免费无线网络；大屏幕中文电视节目</td></tr>';
 html+='<tr><td colspan="3"><strong>B. 膳食</strong></td></tr>';
 html+='<tr><td>B1</td><td>营养待产餐标准</td><td>专业大厨现场烹制营养早餐，午餐晚餐四菜一汤（两荤两素），严格执行孕妇餐标</td></tr>';
@@ -202,8 +219,11 @@ html+='<tr><td>D4</td><td>月嫂服务</td><td>月子中心提供月子餐30天�
 html+='<tr><td colspan="3"><strong>E. 其他免费服务</strong></td></tr>';
 html+='<tr><td>E1</td><td>孕妇大礼包</td><td>尿布，婴儿用品礼包一套</td></tr>';
 html+='<tr><td>E2</td><td>外出逛街</td><td>按客人要求确定</td></tr>';
-html+='<tr><td>E4</td><td>机场接送</td><td>一次免费接送机（洛杉矶）</td></tr>';
-html+='<tr><td>E5</td><td>产检接送</td><td>免费产检接送+生产接送+妈咪回诊+宝宝疫苗+医院账单清零</td></tr>';
+html+='<tr><td>E3</td><td>机场接送</td><td>一次免费接送机（洛杉矶）</td></tr>';
+html+='<tr><td>E4</td><td>产检接送</td><td>免费产检接送+生产接送+妈咪回诊+宝宝疫苗+医院账单清零</td></tr>';
+if(E6){
+html+='<tr><td>E5</td><td>其他服务</td><td>'+E6+'</td></tr>';
+}
 html+='<tr><td>E7</td><td>咨询服务</td><td>美国旅游、房产、保险、银行卡、移民及留学等内容</td></tr>';
 html+='</table>';
 html+='<p>套餐内所列赠送项目限孕妇入住期间使用，如不使用视为自动放弃，不发生任何费用返还或抵扣。</p>';
@@ -234,7 +254,7 @@ html+='<p>7. 产妇或者婴儿发生急、重病或者其他紧急事故时，�
 html+='<p>8. 如果由于美国新生儿国籍政策调整导致乙方新生儿无法获得美国国籍，与甲方无关，甲方不承担任何责任，已签订合同继续履行。</p>';
 
 html+='<div class="signature">';
-html+='<div><strong>客户</strong><div class="signature-line">签字：__________________________<br><br><br></div></div>';
+html+='<div><strong>客户</strong><div class="signature-line">签字：__________________________<br><br><br>日期：____ 年 ____ 月 ____ 日</div></div>';
 html+='<div><strong>皇家月子中心</strong><div class="signature-line">签字：Johnny Zhong<br><br><br>日期：'+签字_str+'</div></div>';
 html+='</div>';
 
