@@ -141,7 +141,7 @@ th{background:#f5f5f5;text-align:center}
 </div>
 </div>
 
-<label class="form-label">E5 其他服务：</label>
+<label class="form-label">E6 其他服务：</label>
 <input class="form-input" id="E5内容" placeholder="请输入">
 
 <label class="form-label">签字日期：</label>
@@ -166,7 +166,7 @@ var 签字 = $('签字日期').value;
 var 签字_str = fd(签字);
 var A1 = v('A1备注') || '白人区豪华别墅豪华套间（独立洗手间）';
 var A2 = v('A2备注') || '成人 50 美金/日，儿童 25 美金/日（含一日三餐及住宿）';
-var E5 = v('E5内容') || '';
+var E6 = v('E5内容') || '';
 
 var html='<h2>皇家月子中心会所服务合约</h2>';
 html+='<div class="note">本合约由客户和月子中心双方就相关服务细节进行确认，为了更好保护客户权益，客户应仔细阅读。</div>';
@@ -222,8 +222,8 @@ html+='<tr><td>E2</td><td>外出逛街</td><td>按客人要求确定</td></tr>';
 html+='<tr><td>E3</td><td>机场接送</td><td>一次免费接送机（洛杉矶）</td></tr>';
 html+='<tr><td>E4</td><td>产检接送</td><td>免费产检接送+生产接送+妈咪回诊+宝宝疫苗+医院账单清零</td></tr>';
 html+='<tr><td>E5</td><td>咨询服务</td><td>美国旅游、房产、保险、银行卡、移民及留学等内容</td></tr>';
-if(E5){
-html+='<tr><td>E6</td><td>其他服务</td><td>'+E5+'</td></tr>';
+if(E6){
+html+='<tr><td>E6</td><td>其他服务</td><td>'+E6+'</td></tr>';
 }
 html+='</table>';
 html+='<p>套餐内所列赠送项目限孕妇入住期间使用，如不使用视为自动放弃，不发生任何费用返还或抵扣。</p>';
