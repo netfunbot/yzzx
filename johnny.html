@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>皇家月子中心服务合约</title>
+<style>
+body{font-family:"Microsoft YaHei",sans-serif;background:#f5f5f5;padding:10px;margin:0}
+.no-print{background:#fff;padding:15px;border-radius:10px;margin-bottom:20px}
+.form-label{font-weight:bold;margin-bottom:5px;display:block}
+.form-input{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ddd;border-radius:5px;box-sizing:border-box}
+.btn{width:100%;padding:15px;background:#667eea;color:#fff;border:none;border-radius:8px;font-size:16px;margin-bottom:10px;cursor:pointer}
+.btn2{background:#11998e}
+#preview{background:#fff;padding:20px;display:none}
+#preview.show{display:block}
+h2{text-align:center}
+h3{font-size:15px;border-bottom:1px solid #ddd;padding-bottom:5px;margin-top:20px}
+table{width:100%;border-collapse:collapse;font-size:11px;margin:10px 0}
+td,th{border:1px solid #333;padding:5px}
+th{background:#f5f5f5;text-align:center}
+.signature{display:flex;justify-content:space-between}
+.signature div{width:45%}
+.signature-line{border-top:1px solid #333;margin-top:40px;padding-top:10px}
+.note{font-size:11px;color:#666;background:#f9f9f9;padding:10px;border-radius:5px;margin-bottom:15px}
+.page{text-align:center;margin:20px 0;font-size:11px;color:#888}
+@media print{.no-print{display:none}body{background:#fff;padding:0}#preview{display:block}
+</style>
+</head>
+<body>
+
+<div class="no-print">
+<h2>🏰 皇家月子中心服务合约</h2>
+
+<label class="form-label">合约编号：</label>
+<input class="form-input" id="合约编号" placeholder="请输入">
+
+<label class="form-label">甲方地址：</label>
+<input class="form-input" id="甲方地址" placeholder="请输入">
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">乙方姓名：</label>
+<input class="form-input" id="乙方姓名" placeholder="请输入">
+</div>
+<div style="flex:1">
+<label class="form-label">护照号码：</label>
+<input class="form-input" id="乙方护照号码" placeholder="请输入">
+</div>
+</div>
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">预产期：</label>
+<input class="form-input" id="乙方预产期" type="date">
+</div>
+<div style="flex:1">
+<label class="form-label">预计入住日期：</label>
+<input class="form-input" id="乙方预计入住日期" type="date">
+</div>
+</div>
+
+<label class="form-label">联系方式：</label>
+<input class="form-input" id="乙方联系方式" placeholder="请输入">
+
+<hr>
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">待产天数：</label>
+<input class="form-input" id="待产天数" value="30" type="number">
+</div>
+<div style="flex:1">
+<label class="form-label">月子餐天数：</label>
+<input class="form-input" id="月子餐天数" value="30" type="number">
+</div>
+</div>
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">套餐总额：</label>
+<input class="form-input" id="套餐总额" value="21000" type="number">
+</div>
+<div style="flex:1">
+<label class="form-label">签约当日支付：</label>
+<input class="form-input" id="签约当日支付" value="2000" type="number">
+</div>
+</div>
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">入住当日支付：</label>
+<input class="form-input" id="入住当日支付" value="17000" type="number">
+</div>
+<div style="flex:1">
+<label class="form-label">出院当天支付：</label>
+<input class="form-input" id="出院当天支付" value="2000" type="number">
+</div>
+</div>
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">超出待产每天：</label>
+<input class="form-input" id="超出待产每天" value="233" type="number">
+</div>
+<div style="flex:1">
+<label class="form-label">超出月子每天：</label>
+<input class="form-input" id="超出月子每天" value="466" type="number">
+</div>
+</div>
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">月嫂小费每天：</label>
+<input class="form-input" id="月嫂小费每天" value="30" type="number">
+</div>
+<div style="flex:1">
+<label class="form-label">做饭阿姨小费：</label>
+<input class="form-input" id="做饭阿姨小费" value="300" type="number">
+</div>
+</div>
+
+<div style="display:flex;gap:10px">
+<div style="flex:1">
+<label class="form-label">月嫂陪产每天：</label>
+<input class="form-input" id="月嫂陪产每天" value="300" type="number">
+</div>
+<div style="flex:1">
+<label class="form-label">开奶按摩每次：</label>
+<input class="form-input" id="开奶按摩每次" value="400" type="number">
+</div>
+</div>
+
+<label class="form-label">签字日期：</label>
+<input class="form-input" id="签字日期" type="date">
+
+<button class="btn" onclick="showPreview()">👁️ 生成预览</button>
+<button class="btn btn2" onclick="window.print()">🖨️ 打印/保存PDF</button>
+</div>
+
+<div id="preview"></div>
+
+<script>
+function $(id){return document.getElementById(id)}
+function v(id){return $(id).value}
+function fd(s){if(!s)return"____年____月____日";var d=new Date(s);return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日"}
+
+var today=new Date().toISOString().split('T')[0];
+$('签字日期').value=today;
+
+function showPreview(){
+var 签字 = $('签字日期').value;
+var 签字_str = fd(签字);
+
+var html='<h2>皇家月子中心会所服务合约</h2>';
+html+='<div class="note">本合约由客户和月子中心双方就相关服务细节进行确认，为了更好保护客户权益，客户应仔细阅读。</div>';
+html+='<p><strong>合约编号：</strong> '+(v('合约编号')||'___________')+'</p>';
+
+html+='<h3>甲方信息：</h3>';
+html+='<p><strong>名称：</strong> 皇家月子中心</p>';
+html+='<p><strong>联系人：</strong> Johnny Zhong</p>';
+html+='<p><strong>地址：</strong> '+(v('甲方地址')||'___________')+'</p>';
+html+='<p><strong>联系电话：</strong> 626-267-9716</p>';
+
+html+='<h3>乙方信息：</h3>';
+html+='<p><strong>姓名：</strong> '+(v('乙方姓名')||'___________')+'</p>';
+html+='<p><strong>护照号码：</strong> '+(v('乙方护照号码')||'___________')+'</p>';
+html+='<p><strong>预产期：</strong> '+fd(v('乙方预产期'))+'</p>';
+html+='<p><strong>预计入住日期：</strong> '+fd(v('乙方预计入住日期'))+'</p>';
+html+='<p><strong>联系方式：</strong> '+(v('乙方联系方式')||'___________')+'</p>';
+
+html+='<p>甲乙双方经协商，就乙方入住达成以下合约：</p>';
+
+html+='<h3>一、套餐费用及付款</h3>';
+html+='<p><strong>1. 套餐：</strong> 待产 <strong>'+v('待产天数')+'</strong> 天 + 月子餐 <strong>'+v('月子餐天数')+'</strong> 天</p>';
+html+='<p><strong>2. 付款：</strong></p>';
+html+='<p>客户所选择套餐总额为税后 <strong>'+v('套餐总额')+'</strong> 美金</p>';
+html+='<p>客户在合同签订当日支付套餐为 <strong>'+v('签约当日支付')+'</strong> 美金</p>';
+html+='<p>客户入住当日付 <strong>'+v('入住当日支付')+'</strong> 美金</p>';
+html+='<p>客户生产出院当天支付 <strong>'+v('出院当天支付')+'</strong> 美金</p>';
+html+='<p>如果提前离开不退还费用。超出待产天数，每天收取 <strong>'+v('超出待产每天')+'</strong> 美金。超出月子天数，每天收取 <strong>'+v('超出月子每天')+'</strong> 美金。(按实际天数计算收取)</p>';
+html+='<p>套餐费用含月嫂工资但不含月嫂小费。月嫂小费每天 <strong>'+v('月嫂小费每天')+'</strong> 美元由客户支付。</p>';
+html+='<p>做饭阿姨小费总共 <strong>'+v('做饭阿姨小费')+'</strong> 美元需客户额外支付。</p>';
+
+html+='<h3>二、月子中心服务明细</h3>';
+html+='<p>本表费用除特别注明外，均以美金计价</p>';
+html+='<table><tr><th>编号</th><th>项目</th><th>备注</th></tr>';
+html+='<tr><td colspan="3"><strong>A. 住宿</strong></td></tr>';
+html+='<tr><td>A1</td><td>尊贵住宿标准</td><td>白人区豪华别墅豪华套间（独立洗手间）</td></tr>';
+html+='<tr><td>A2</td><td>家人陪同</td><td>成人 50 美金/日，儿童 25 美金/日（含一日三餐及住宿）</td></tr>';
+html+='<tr><td>A3</td><td>套内豪华配置</td><td>套内自带高端厨房、洗衣机、烘干机；一次性提供浴巾，毛巾、拖鞋，洗发液、护发素、沐浴露、牙膏、牙刷等日用品；免费无线网络；大屏幕中文电视节目</td></tr>';
+html+='<tr><td colspan="3"><strong>B. 膳食</strong></td></tr>';
+html+='<tr><td>B1</td><td>营养待产餐标准</td><td>专业大厨现场烹制营养早餐，午餐晚餐四菜一汤（两荤两素），严格执行孕妇餐标</td></tr>';
+html+='<tr><td>B2</td><td>采购新鲜食材</td><td>肉类绝对新鲜、蔬菜保证新鲜。确保最佳营养成分。（必须冷冻食品除外）</td></tr>';
+html+='<tr><td>B3</td><td>额外餐点</td><td>全天无限量供应果汁、牛奶、面包、时令水果</td></tr>';
+html+='<tr><td>B5</td><td>医院月子餐配送</td><td>在客户正常入院生产期间免费为客户配送月子餐</td></tr>';
+html+='<tr><td>B6</td><td>营养月子餐</td><td>专业大厨现场烹制负责产妇每天三餐月子餐及两餐甜点</td></tr>';
+html+='<tr><td colspan="3"><strong>D. 妈咪照顾</strong></td></tr>';
+html+='<tr><td>D1</td><td>专人陪产</td><td>专人24小时待命送医院生产，办理入院手续及产房入住</td></tr>';
+html+='<tr><td>D2</td><td>提供月嫂陪产服务（可选）</td><td>费用每天 '+v('月嫂陪产每天')+' 美金，由乙方支付</td></tr>';
+html+='<tr><td>D3</td><td>提供专业开奶按摩，排恶露等服务（可选）</td><td>费用每次 '+v('开奶按摩每次')+' 美金，由乙方支付</td></tr>';
+html+='<tr><td>D4</td><td>月嫂服务</td><td>月子中心提供月子餐30天，月嫂服务26天（超出26天月嫂工资由客户支付）</td></tr>';
+html+='<tr><td colspan="3"><strong>E. 其他免费服务</strong></td></tr>';
+html+='<tr><td>E1</td><td>孕妇大礼包</td><td>尿布，婴儿用品礼包一套</td></tr>';
+html+='<tr><td>E2</td><td>外出逛街</td><td>按客人要求确定</td></tr>';
+html+='<tr><td>E4</td><td>机场接送</td><td>一次免费接送机（洛杉矶）</td></tr>';
+html+='<tr><td>E5</td><td>产检接送</td><td>免费产检接送+生产接送+妈咪回诊+宝宝疫苗+医院账单清零</td></tr>';
+html+='<tr><td>E7</td><td>咨询服务</td><td>美国旅游、房产、保险、银行卡、移民及留学等内容</td></tr>';
+html+='</table>';
+html+='<p>套餐内所列赠送项目限孕妇入住期间使用，如不使用视为自动放弃，不发生任何费用返还或抵扣。</p>';
+
+html+='<div class="page">第 1 页 共 3 页</div>';
+
+html+='<p>美国当地多个资深华人医生可以选择，医院及医生与月子中心是不同机构，月子中心只负责介绍、联系及预约等工作，本中心不提供支付服务。</p>';
+html+='<p><strong>备注：</strong> 孕妇在国内产检时的产检单一定要扫描发至自己的电子邮箱，以便美国医生作为参考。国内产检报告美国医生大部分认可，只有一些技术性及医疗器械中美两国衡量标准不同，故有一到两项产检需要重新在美国检查，所需费用自付。</p>';
+
+html+='<h3>四、合同的终止和退款</h3>';
+html+='<p><strong>1. 提前终止服务：</strong></p>';
+html+='<p><strong>1.1.</strong> 如乙方遇到不可抗力灾害、政策变更、政府行为及身体突发异常等特殊原因未能前往美国，或未能顺利通关进入美国，甲方退还乙方全部定金。</p>';
+html+='<p><strong>1.2.</strong> 如甲方遇到不可抗力灾害、政策变更、政府行为等特殊原因不能安排乙方赴美生产事宜，则甲方退还乙方全部定金。</p>';
+html+='<p><strong>1.3.</strong> 乙方顺利抵达美国后甲方按照合约为乙方提供服务，若乙方不配合甲方擅自脱离甲方，有意在美国自行离开或失踪，所产生任何后果以及人身安全，甲方不负责任，所交甲方款项不予退还。</p>';
+html+='<p><strong>1.4.</strong> 在美国期间，由于乙方个人原因（包括临时住院，去朋友处访问等）偶然原因离开会所并在外食宿，甲方不予退还乙方离开期间的食宿费用。</p>';
+html+='<p><strong>2. 退款说明：</strong></p>';
+html+='<p><strong>2.1.</strong> 乙方退款时需签订退款申请单，自双方签订退款申请单之日起，双方合约自动终止。</p>';
+html+='<p><strong>2.2.</strong> 退款时银行收取的手续费由乙方承担，退款周期为3个工作日。</p>';
+
+html+='<h3>五、争议解决：</h3>';
+html+='<p>1. 甲方有权进行本合约规定的交易，并已采取所有必要的公司行为授权签字和履行合约。</p>';
+html+='<p>2. 乙方通过甲方及其工作人员电话、电子邮件、口头等形式所获得的信息，与本协议不符的或超出本协议范围的，均以本协议为准。双方已对本服务细节确认单进行了认真阅读并完全理解。签署本确认单时，对所列条款无异议。</p>';
+html+='<p>3. 双方在执行本合约中的所有分歧，应友好协商解决；协商不成的，提交月子中心所在地法院裁决。但该等行为并不影响非诉争事项的执行。</p>';
+html+='<p>4. 本合约自生效之日起对甲方构成有约束力的义务。</p>';
+html+='<p>5. 若因乙方在美国期间自己意外或自己身体原因造成流产或者难产，甲方不负任何责任。</p>';
+html+='<p>6. 若乙方在预产期提前或者拖后生产，如在有效合约内，甲方没有调配乙方房间的权利。</p>';
+html+='<p>7. 产妇或者婴儿发生急、重病或者其他紧急事故时，甲方应即联系紧急呼救，送医院治疗，并立即通知联系人，由于乙方自身原因造成的病情延误与甲方无关，甲方无需承担法律责任。</p>';
+html+='<p>8. 如果由于美国新生儿国籍政策调整导致乙方新生儿无法获得美国国籍，与甲方无关，甲方不承担任何责任，已签订合同继续履行。</p>';
+
+html+='<div class="signature">';
+html+='<div><strong>客户</strong><div class="signature-line">签字：__________________________<br><br><br>日期：'+签字_str+'</div></div>';
+html+='<div><strong>皇家月子中心</strong><div class="signature-line">签字：Johnny Zhong<br><br><br>日期：2026 年 2 月 3 日</div></div>';
+html+='</div>';
+
+html+='<div class="page">第 3 页 共 3 页</div>';
+
+$('preview').innerHTML=html;
+$('preview').classList.add('show');
+$('preview').scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
