@@ -1,0 +1,6 @@
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+site/        # Surge 部署文件夹,不进 git
+deploy-surge.sh
