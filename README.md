@@ -4,7 +4,7 @@
 
 ## 部署
 
-- **GitHub Pages**: https://netfunbot.github.io/johnny/johnny.html (推送 `main` 分支后自动生效)
+- **GitHub Pages**: https://netfunbot.github.io/yzzx/johnny.html (推送 `main` 分支后自动生效)
 - 源文件: `johnny.html` (单文件,无依赖)
 
 ## 改动
